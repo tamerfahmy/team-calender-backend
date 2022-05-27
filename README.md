@@ -45,12 +45,6 @@ project
 4. run `npm i`
 5. run `npm run start`
 6. This message should appear on your terminal `Team Calender API listening on port 3000!`
-### Using Docker
-To run the APIs locally using docker (Docker Engine is required):
-1. Clone the repository locally
-2. Open local terminal to project root directory
-3. `docker build . -t team-calender-api`
-4. `docker run -p 300:300 -d team-calender-api`
 
 ## Testing
 Jest framework is used to write unit test for this project, to run unit tests:
