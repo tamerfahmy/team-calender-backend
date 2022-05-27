@@ -1,18 +1,28 @@
-const swaggerAutogen = require('swagger-autogen')();
-
-const doc = {
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    basePath: "/api",
     info: {
-        version: "1.0.0",
-        title: "Team Calender API",
+      title: "Team Calender API",
+      version: "1.0.0",
+      contact: {
+        name: "Tamer Fahmy"
+      },
     },
-    host: "localhost:3000",
-    basePath: "/",
-    schemes: ['http', 'https'],
-    consumes: ['application/json'],
-    produces: ['application/json'],
+    servers: [
+      {
+        url: "http://localhost:3000/api",
+        description: "Development",
+      },
+      {
+        url: "https://team-calender-backend.herokuapp.com/api",
+        description: "Production",
+      },
+    ],
+  },
+  apis: ["./src/routes/*.route.js"],
 };
 
-const outputFile = './swagger_output.json';
-const endpointsFiles = ['./index.js'];
-
-swaggerAutogen(outputFile, endpointsFiles, doc);
+module.exports = {
+    options
+}

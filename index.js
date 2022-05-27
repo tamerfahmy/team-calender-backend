@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const swaggerUi = require('swagger-ui-express');
-const swaggerFile = require('./swagger_output.json');
+const swaggerUI = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swagger = require('./swagger');
 
 const dateTimeRouter = require('./src/routes/datetime.route');
 const app = express();
@@ -11,8 +12,12 @@ app.use(cors({
     origin: ['http://localhost:4200', 'https://tamerfahmy.github.io']
 }));
 
+const specs = swaggerJsDoc(swagger.options);
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+
 app.use('/api/date-time', dateTimeRouter);
-app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
