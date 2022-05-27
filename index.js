@@ -1,10 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger_output.json');
 
 const dateTimeRouter = require('./src/routes/datetime.route');
 const app = express();
 const port = process.env.PORT || 3000;
+
+
+app.use(cors({
+    origin: 'https://tamerfahmy.github.io'
+}));
 
 app.use('/api/date-time', dateTimeRouter);
 app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
