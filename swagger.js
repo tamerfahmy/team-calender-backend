@@ -7,7 +7,7 @@ const doc = {
     },
     host: "localhost:3000",
     basePath: "/",
-    schemes: ['http'],
+    schemes: ['http', 'https'],
     consumes: ['application/json'],
     produces: ['application/json'],
 };
