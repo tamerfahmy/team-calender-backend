@@ -7,9 +7,8 @@ const dateTimeRouter = require('./src/routes/datetime.route');
 const app = express();
 const port = process.env.PORT || 3000;
 
-
 app.use(cors({
-    origin: 'https://tamerfahmy.github.io'
+    origin: ['http://localhost:4200', 'https://tamerfahmy.github.io']
 }));
 
 app.use('/api/date-time', dateTimeRouter);
