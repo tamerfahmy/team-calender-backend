@@ -2,6 +2,8 @@
 
 [DEMO](https://team-calender-backend.herokuapp.com/api-docs/)
 
+![example workflow](https://github.com/tamerfahmy/team-calender-backend/actions/workflows/main.yml/badge.svg)
+
 ## Introduction
 The aim of this application is to support team members working in different timezones accross the globe to propably setup meetings in respective local time zones. This REST APIs are designed to be the backend for the team calender application.
 
