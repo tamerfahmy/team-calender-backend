@@ -1,10 +1,12 @@
 # Team Calender APIs
 
+[DEMO](https://team-calender-backend.herokuapp.com/api-docs/)
+
 ## Introduction
 The aim of this application is to support team members working in different timezones accross the globe to propably setup meetings in respective local time zones. This REST APIs are designed to be the backend for the team calender application.
 
 ## Routes
-To check/test available API routes please see SwaggerUI [SwaggerUI](http://localhost:3000/api-doc)
+To check/test available API routes please see SwaggerUI [SwaggerUI](http://localhost:3000/api-docs)
 - `GET /date-time` This route returns a list of local datetime for supported timezones
 
 ## Project Structure
